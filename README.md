@@ -1,1 +1,4 @@
-# 3150lab1
+# Lab Week 1: prefix sums
+
+Compilation instructions:
+
