@@ -5,6 +5,7 @@
 int test_ary_0[] = {};
 int test_ary_1[] = {1, 1, 1, -1, -1, -1};
 int test_ary_2[] = {2, 5, 7, 10, -25};
+int test_ary_3[] = {-3, 5};
 
 TEST_CASE("prefix sum")
 {
@@ -19,8 +20,8 @@ TEST_CASE("prefix sum")
     }
     
     SUBCASE("non positive"){
-        CHECK_FALSE(non_pos_prefix_sum(test_ary_0, sizeof(test_ary_0)));
-        CHECK_FALSE(non_pos_prefix_sum(test_ary_1, sizeof(test_ary_1)/sizeof(test_ary_1[0])));
-        CHECK_FALSE(!non_pos_prefix_sum(test_ary_2, sizeof(test_ary_2)/sizeof(test_ary_2[0]))); //should be true
+        CHECK_FALSE(!non_pos_prefix_sum(test_ary_0, sizeof(test_ary_0))); //should be true, 0 is not positive
+        CHECK_FALSE(non_pos_prefix_sum(test_ary_1, sizeof(test_ary_1)/sizeof(test_ary_1[0])));  //should be false
+        CHECK_FALSE(non_pos_prefix_sum(test_ary_2, sizeof(test_ary_2)/sizeof(test_ary_2[0]))); //should be false
     }
 };

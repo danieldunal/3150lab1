@@ -26,11 +26,11 @@ bool non_neg_prefix_sum(int ary[], int length){
 
 bool non_pos_prefix_sum(int ary[], int length){
     int sum = 0;
-    bool positive = true;
+    bool positive = false;
     for (int i = 0; i < length; i++){
         sum += ary[i];
-        if (sum < 0){
-            positive = false;
+        if (sum > 0){
+            positive = true;
             break;
         } 
     }
